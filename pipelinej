@@ -1,12 +1,13 @@
 pipeline {
-    agent none
+    agent any
     stages {
-	
-	stage('Non-Parallel Stage') {
-	    agent {
-                        label "main"
+	stage('Compile') {
+	    steps {
+                        echo "Compiled Successfully!!";
+			}
                 }
-        steps {
-                echo 'This stage will be executed first'
+         stage('JUnit'){
+	 steps{
+                echo 'Junit Passed Successfully'
                 }
         }
